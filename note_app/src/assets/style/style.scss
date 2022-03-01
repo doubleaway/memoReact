@@ -1,0 +1,851 @@
+  @import "reset","mixin","data";
+
+  //color
+  .back_light_gray{
+    background: $color_light_gray;
+  }
+  .color_main{
+    color:$main_color!important;
+  }
+  .color_point{
+    color:$point_color!important;
+  }
+  .color_light_gray{
+    color:$color_light_gray!important;
+  }
+  .color_gray{
+    color:$color_gray!important;
+  }
+  input:focus{
+    outline: 1px solid $main_color;
+  }
+
+  //button
+  .btn{
+    &_edit{
+      border:1px solid #eee;
+      padding-top:5px;
+      box-sizing: border-box;
+
+      span{
+        font-size: 0.85rem;
+      }
+    }
+
+  }
+
+  body,html{
+    background-color: #419C9E;
+    // background-color: #8FE8EB;
+    // background:linear-gradient(to bottom,#419C9E,#8FE8EB);
+    
+  }
+// 스크롤바
+  ::-webkit-scrollbar {
+    width: 15px;
+
+  }
+  ::-webkit-scrollbar-thumb {
+
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $color_light_gray; 
+  }
+  // 스크롤바 끝
+
+  //알림창
+  .notification_box{
+    @include size(100%,100%);
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.8);
+
+    aside{
+      @include size(30%,400px);
+      margin:{
+        top:200px;
+        left: 35%;
+      }
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+      span{
+        &>button{
+
+        @include size(50px,50px);
+        padding: 0 0;
+        background: none;
+        border:none;
+        position: absolute;
+        right: 10px;
+        top:10px;
+      }
+    }
+      .notification_icon{
+        height: 245px;
+        background: firebrick;
+        text-align: center;
+        color:white;
+        svg{
+          @include size(100%,50%);
+          margin-top: 50px;
+          color: white;
+        }
+        h1{
+          margin-top: 15px;
+          font:{
+            size: 1.5rem;
+          }
+        }
+      }
+      .notification_content{
+        height: 100px;
+        text-align: center;
+        font:{
+          weight: 600;
+          size: 1.35rem;
+        }
+        p{
+          color:#495057;
+          font-size: 1.2rem;
+        }
+       padding-top:15px;
+        box-sizing: border-box;
+      }
+      .notification_btn{
+        display: flex;
+        div{
+
+          @include size(50%,60px);
+        }
+        button{
+
+          font:{
+            size: 1.25rem;
+            weight: bold;
+          }
+
+          @include size(100%,100%);
+
+          border:none;
+          border-radius: 0;
+
+          &:last-child{
+            color:firebrick;
+            border-left: 1px solid $color_gray;
+          }
+        }
+      }
+    }
+  }
+
+
+  //nav
+  .nav_box{
+    @include size(60%,70px);
+    box-shadow: 5px 5px 5px #495057;
+    margin:{
+      left:20%;
+      top:50px;
+    }
+    background:#EBB390;
+    border:30px solid #EBB390;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    display: flex;
+    justify-content: space-around;
+    h1{
+      font-size: 3.5rem;
+      text-align: center;
+      color: #333;
+    }
+  }
+
+
+  //edit_bar
+  .edit_bar_box{
+    display: flex;
+  
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    .edit_bar{
+      margin:{
+        left: 0;
+        top:0;
+      }
+      display: flex;
+    span{
+      line-height: 40px;
+      margin-left: 5px;
+    }
+      li{
+        
+        margin-right: 15px;
+        @include size(90px,90px);
+        background-color: #b15115c9;
+        border-radius: 100%;
+        overflow: hidden;
+        box-shadow: 2px 2px 2px #495057;
+
+        &:hover{
+          margin-top:-3px;
+          transition: all linear 0.3s;
+          background-color: rgba(235, 179, 144, 0.788);;
+        }
+        button{
+
+          border: none;
+          @include size(95%,95%);
+          background-color: rgba(255,255,255,0.4);
+          border-radius: 100%;
+          padding:3px;
+          box-sizing: border-box;
+          color:#333;
+          border: 2px solid rgba(150, 0, 0, 0.3);
+          
+
+        }
+        span{
+          display: block;
+          line-height: 1.5;
+          font-weight: bold;
+          position: relative;
+      
+        }
+        svg{
+          margin-top:5px;
+        }
+        &.axent{
+          button{
+            color: #419C9E;
+          }
+          svg{
+            color:#419C9E;
+          }
+        }
+        
+      }
+    }
+    .search_bar{
+      height: 48px;
+      border: 1px solid $color_light_gray;
+      border-radius: 5px;
+      svg{
+        margin-top:0;
+      }
+      input{
+        @include size(280px,100%);
+        background: none;
+        border:none;
+        padding:5px;
+        box-sizing: border-box;
+      }
+    
+       
+    }
+
+  }
+
+
+
+  //homebox
+
+  .home_content{
+    background-color: antiquewhite;
+    border: 30px solid #EBB390;
+    @include size(60%,70vh);
+    margin-left: 20%;
+    box-shadow: 5px 5px 5px #495057;
+    overflow: auto;
+  
+  }
+
+
+  //사각형 모양 리스트
+  .list_box_square{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    // justify-content: center;
+    padding: 0 6%;
+
+  }
+
+
+  //메모장 스타일
+  .memo_box{
+    .label_box{
+      background: rgba(255,255,255,0.3);
+      overflow: hidden;
+      height: 30px;
+      line-height: 1.5;
+      text-indent: 15px;
+      color:rgba(0,0,0,0.3);
+      font-size: 1.2rem;
+      svg{
+        padding-right: 5px;
+      }
+      justify-content: space-between;
+      display: flex;
+    }
+    .memo_content_box{
+      padding:15px 3.5%;
+ 
+      padding:{
+        bottom:30px;
+        top: 15px;
+      }
+      &>div{
+        &:last-child{
+          margin-top:30px;
+          text-align: right;
+        }
+      }
+    }
+    cursor: pointer;
+    @include size(310px,auto);
+    box-sizing: border-box;
+    background: $main_color;
+    overflow: hidden;
+
+    margin:{
+      left:17px;
+      top:15px;
+    }
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px #495057;
+    input[type='checkbox']{
+      border: 1px solid $color_gray;
+     box-shadow: 2px 2px 2px $main_color;
+    &:checked{
+      //background: r;
+    }
+    }
+    .contents_inputs{
+      display: inline-block;
+      width: 100%;
+      outline: none;
+      border: none;
+    }
+
+
+    .content_txt{
+      width:100%;
+      div{
+        float: right;
+        margin-right: 10px;
+        padding-top:15px;
+        background-color: $color_gray;
+        border: 2px solid rgba(0,0,0,0.3);
+        &:last-child{
+          margin-right: 10px;
+        }
+
+      }
+      button{
+        &.active{
+        background-color: $point_color;
+        color:white;
+        }
+      }
+      .btn_edit{
+        float: right;
+        margin-right: 10px;
+        padding-top:15px;
+        background-color: $color_light_gray;
+        border: 2px solid rgba(0,0,0,0.3);
+        display: inline-block;
+        @include size(91.2px,61.64px);
+        border-radius: 3px;
+        text-align: center;
+      }
+    
+    }
+    .title_box{
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      background:rgba(255,255,255,0.2);
+      svg{
+        margin-top: 0px;
+      }
+      p{
+        color:$color_light_gray;
+        cursor: pointer;
+      }
+    }
+
+
+  }
+
+  .inputs_box{
+    position: fixed;
+    @include size(100%,100%);
+    background: rgba(0,0,0,0.5);
+    left:0;top:0;
+    display: flex;
+    justify-content: center;
+    .title_box{
+      svg{
+        margin-top: 15px;
+      }
+     
+    }
+    .memo_box{
+      position: relative;
+      @include size(35%,450px);
+      box-sizing: border-box;
+      margin-top:225px;
+      background:   $main_color;
+      textarea{
+        display: inline-block;
+        height:300px;
+        word-break: break-word;
+        background: $main_color;
+        padding:10px;
+      }
+      .color_gray{
+        clear: both;
+        position:absolute;
+        bottom:20px;
+        left: 15px;
+
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
