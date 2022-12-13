@@ -54,7 +54,8 @@ input:focus {
 }
 
 .btn_edit {
-  border: 1px solid #eee;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.3);
   padding-top: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -368,10 +369,11 @@ body, html {
 
 .memo_box .content_txt {
   width: 100%;
+  position: relative;
+  height: calc(100% - 50px);
 }
 
 .memo_box .content_txt div {
-  float: right;
   margin-right: 10px;
   padding-top: 15px;
   background-color: #4f545a;
@@ -388,16 +390,35 @@ body, html {
 }
 
 .memo_box .content_txt .btn_edit {
-  float: right;
-  margin-right: 10px;
-  padding-top: 15px;
-  background-color: #E1E4E7;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  bottom: 20px;
+  right: 15px;
+  margin-right: 0;
+  padding-top: 12.5px;
+  background-color: transparent;
+  border: 0px solid rgba(0, 0, 0, 0.3);
   display: inline-block;
   width: 91.2px;
-  height: 61.64px;
-  border-radius: 3px;
+  height: 50px;
+  border-radius: 8px;
   text-align: center;
+  position: absolute;
+  background-color: #419C9E;
+  color: white;
+}
+
+.memo_box .content_txt .btn_edit:hover {
+  bottom: 25px;
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.memo_box .content_txt .btn_edit:last-child {
+  right: 111px;
+  color: #419C9E;
+  border: 0px;
+  border-bottom: 1px solid #419C9E;
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .memo_box .title_box {
@@ -440,13 +461,16 @@ body, html {
 }
 
 .inputs_box .memo_box {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  margin-left: calc(-672px / 2);
   width: 35%;
   height: 450px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-top: 225px;
+  top: calc(50% - (35% / 2));
   background: #AADCF5;
+  border-radius: 8px;
 }
 
 .inputs_box .memo_box textarea {
@@ -455,6 +479,8 @@ body, html {
   word-break: break-word;
   background: #AADCF5;
   padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .inputs_box .memo_box .color_gray {

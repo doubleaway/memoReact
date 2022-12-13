@@ -27,6 +27,7 @@ const TOGGLE='notes/TOGGLE';//중요 체크/해제
 const INPUT_CHANGE='notes/INPUT_CHANGE';//input값 변경
 const VISIBLE='notes/VISIBLE';//보이게하기/않보이게하기
 const CONCERN='notes/CONVERN';//중요표시 체크된것만 보이게
+const EDIT='notes/EDIT';//수정
 
 
 let id=7;//add될때마다 1씩 추가
@@ -61,7 +62,11 @@ export const visible=()=>({
 export const concern=(concern)=>({
     type:CONCERN,
     concern
-})
+});
+
+export const edit=(memo)=>({
+    type: EDIT
+});
 
 
 
@@ -93,7 +98,12 @@ export default function notes(state=data,action){
             return{
                 ...state,
                 data_con:state.data_con.filter(concern=>concern.active==false)
-            }
+            };
+            case EDIT:
+                return{
+                    ...state,
+                    data_con:state.data_con.filter(concern=>concern.active==false)
+                }
 
 
         default:return state;
