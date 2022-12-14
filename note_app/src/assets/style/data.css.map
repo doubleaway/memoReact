@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAcA,OAAO,CAAC,qGAAI",
-    "sources": [
-        "data.scss"
-    ],
-    "names": [],
-    "file": "data.css"
-}
+{"version":3,"sources":["data.scss"],"names":[],"mappings":"AAgBQ,6GAAA","file":"data.css"}

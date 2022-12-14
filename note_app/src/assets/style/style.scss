@@ -8,7 +8,7 @@
     color:$main_color!important;
   }
   .color_point{
-    color:$point_color!important;
+    color:$main_color!important;
   }
   .color_light_gray{
     color:$color_light_gray!important;
@@ -36,7 +36,7 @@
   }
 
   body,html{
-    background-color: #419C9E;
+    background-color: $back_color;
     // background-color: #8FE8EB;
     // background:linear-gradient(to bottom,#419C9E,#8FE8EB);
     
@@ -110,7 +110,7 @@
           size: 1.35rem;
         }
         p{
-          color:#495057;
+          color: $color_light_black;
           font-size: 1.2rem;
         }
        padding-top:15px;
@@ -147,13 +147,13 @@
   //nav
   .nav_box{
     @include size(60%,70px);
-    box-shadow: 5px 5px 5px #495057;
+    box-shadow: 2.5px 2.5px 2.5px  $color_light_black;
     margin:{
       left:20%;
       top:50px;
     }
-    background:#EBB390;
-    border:30px solid #EBB390;
+    background:$sub_color;
+    border:30px solid $sub_color;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     display: flex;
@@ -161,7 +161,8 @@
     h1{
       font-size: 3.5rem;
       text-align: center;
-      color: #333;
+      color: $color_black;
+      margin-top:10px;
     }
   }
 
@@ -187,10 +188,10 @@
         
         margin-right: 15px;
         @include size(90px,90px);
-        background-color: #b15115c9;
+        background-color: $point_color;
         border-radius: 100%;
         overflow: hidden;
-        box-shadow: 2px 2px 2px #495057;
+        box-shadow: 2px 2px 2px $color_light_black;
 
         &:hover{
           margin-top:-3px;
@@ -205,7 +206,7 @@
           border-radius: 100%;
           padding:3px;
           box-sizing: border-box;
-          color:#333;
+          color:$color_black;
           border: 2px solid rgba(150, 0, 0, 0.3);
           
 
@@ -222,10 +223,10 @@
         }
         &.axent{
           button{
-            color: #419C9E;
+            color: $point_color;
           }
           svg{
-            color:#419C9E;
+            color: $point_color;
           }
         }
         
@@ -256,11 +257,11 @@
   //homebox
 
   .home_content{
-    background-color: antiquewhite;
-    border: 30px solid #EBB390;
+    background-color: $back_color;
+    border: 30px solid $sub_color;
     @include size(60%,70vh);
     margin-left: 20%;
-    box-shadow: 5px 5px 5px #495057;
+    box-shadow: 2.5px 2.5px 2.5px $color_light_black;
     overflow: auto;
   
   }
@@ -310,15 +311,15 @@
     cursor: pointer;
     @include size(310px,auto);
     box-sizing: border-box;
-    background: $main_color;
+    background: $memo_color;
     overflow: hidden;
 
     margin:{
       left:17px;
       top:15px;
     }
-    border-radius: 2px;
-    box-shadow: 3px 3px 3px #495057;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px  $color_light_black;
     input[type='checkbox']{
       border: 1px solid $color_gray;
      box-shadow: 2px 2px 2px $main_color;
@@ -423,13 +424,13 @@
       @include size(35%,450px);
       box-sizing: border-box;
       top:calc(50% - (35% / 2));
-      background:   $main_color;
+      background: $memo_color;
       border-radius: 8px;
       textarea{
         display: inline-block;
         height:300px;
         word-break: break-word;
-        background: $main_color;
+        background: $memo_color;
         padding:10px;
         box-sizing: border-box;
       }
